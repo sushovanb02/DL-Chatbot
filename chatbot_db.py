@@ -28,13 +28,15 @@ def find_parent(pid):
         print("find_parent", e)
         return False
 
+# Reading rows which is of the json format
 if __name__ == "__main__":
     create_table()
     row_counter = 0
     paired_rows = 0
 
-    with open("D:/CSE/projects/DL-Chatbot/chatbot data/{}/RC_{}".format(timeframe.split('-')[0], timeframe), buffer=1000) as f:
+    with open(r"D:/CSE/projects/DL-Chatbot/chatbot data/RC_2015-01", buffering=1000) as f:
         for row in f:
+            print(row)
             row_counter += 1
             row = json.loads(row)
             parent_id = row['parent_id']
